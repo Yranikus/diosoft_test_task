@@ -32,7 +32,7 @@ public class ContactController {
         return new ResponseEntity(contactService.getByFullname(firstName, lastName, middleName).get(), HttpStatus.ACCEPTED);
     }
 
-    //Удаляет по ФИО person
+    //Удаляет контакт по ФИО person. Сам person при этом остается в базе
     //{
     //   "firstName" : "sanya",
     //   "lastName" : "sanya",
