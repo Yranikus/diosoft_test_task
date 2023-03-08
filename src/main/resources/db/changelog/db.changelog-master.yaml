@@ -1,0 +1,115 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
+  - changeSet:
+      id: 1
+      author: postgres
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(80)
+                  constraints:
+                    unique: true
+                    uniqueConstraintName: uniq_name
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(80)
+                  constraints:
+                    unique: true
+                    uniqueConstraintName: uniq_name
+                    nullable: false
+              - column:
+                  name: middle_name
+                  type: varchar(80)
+                  constraints:
+                    unique: true
+                    uniqueConstraintName: uniq_name
+                    nullable: false
+              - column:
+                  name: position
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 2
+      author: postgres
+      changes:
+        - createTable:
+            tableName: contact_type
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+  - changeSet:
+      id: 3
+      author: postgres
+      changes:
+        - createTable:
+            tableName: contacts
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: number
+                  type: varchar(20)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: contact_type_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: contact_type_id
+                    references: contact_type(id)
+              - column:
+                  name: person_id
+                  type: BIGINT
+                  constraints:
+                    unique: true
+                    nullable: false
+                    foreignKeyName: person_id
+                    references: person(id)
+  - changeSet:
+      id: 4
+      author: postgres
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: type
+                  value: дом
+            schemaName: public
+            tableName: contact_type
+        - insert:
+            columns:
+              - column:
+                  name: type
+                  value: моб
+            schemaName: public
+            tableName: contact_type
