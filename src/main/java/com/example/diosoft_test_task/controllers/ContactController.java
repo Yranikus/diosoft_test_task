@@ -34,9 +34,9 @@ public class ContactController {
 
     //Удаляет контакт по ФИО person. Сам person при этом остается в базе
     //{
-    //   "firstName" : "sanya",
-    //   "lastName" : "sanya",
-    //  "middleName" : "sanya",
+    //   "firstName" : "Sasha",
+    //   "lastName" : "Sashev",
+    //  "middleName" : "Sashevich",
     // }
     @DeleteMapping("contacts/deleteByPerson")
     public HttpEntity deleteContactByPerson(@RequestBody PersonEntity personEntity) {

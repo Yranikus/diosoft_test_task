@@ -28,9 +28,9 @@ public class PersonController {
     //Можно найти по имени
     //Принимает
     //{
-    //  "firstName" : "sanya",
-    //  "lastName" : "sanya",
-    //	"middleName" : "sanya",
+    //   "firstName" : "Sasha",
+    //   "lastName" : "Sashev",
+    //  "middleName" : "Sashevich",
     //  "position" : "mid" //можно и без позиции
     // },
     @GetMapping("person/get")
@@ -43,9 +43,9 @@ public class PersonController {
     //Удалит person и все его контакты.
     //Принимает
     //{
-    //  "firstName" : "sanya",
-    //  "lastName" : "sanya",
-    //	"middleName" : "sanya",
+    //   "firstName" : "Sasha",
+    //   "lastName" : "Sashev",
+    //  "middleName" : "Sashevich",
     //  "position" : "mid" //можно и без позиции
     // },
     @DeleteMapping("person/delete")
@@ -57,9 +57,9 @@ public class PersonController {
     //Сохранит person без контактов.
     //Принимает
     //{
-    //  "firstName" : "sanya",
-    //  "lastName" : "sanya",
-    //	"middleName" : "sanya",
+    //   "firstName" : "Sasha",
+    //   "lastName" : "Sashev",
+    //  "middleName" : "Sashevich",
     //  "position" : "mid"
     // },
     @PostMapping("person/saveOnlyPerson")
